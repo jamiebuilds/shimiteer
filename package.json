@@ -1,0 +1,49 @@
+{
+  "name": "shimiteer",
+  "version": "0.0.0",
+  "description": "Puppeteer API shim for other browsers using WebdriverIO",
+  "main": "index.js",
+  "repository": "https://github.com/thejameskyle/shimiteer",
+  "author": "James Kyle <me@thejameskyle.com>",
+  "license": "MIT",
+  "keywords": [
+    "puppeteer",
+    "webdriver",
+    "browser",
+    "integration",
+    "test",
+    "chrome",
+    "firefox",
+    "ie",
+    "edge",
+    "safari"
+  ],
+  "files": ["index.js", "dist"],
+  "scripts": {
+    "typecheck": "glow",
+    "test": "ava",
+    "format": "prettier --write **/*.{js,json,md}",
+    "clean": "rm -rf dist",
+    "build:legacy": "BABEL_ENV=legacy babel src -d dist/legacy",
+    "build:modern": "BABEL_ENV=legacy babel src -d dist/modern",
+    "build": "yarn clean && yarn build:legacy && yarn build:modern",
+    "prepublish": "yarn build",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.64.0",
+    "glow": "^1.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
+    "puppeteer": "^1.0.0"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": ["prettier --write", "git add"]
+  }
+}
