@@ -1,6 +1,6 @@
 // @flow
-import EventEmitter from 'events';
-import { ChildProcess } from 'child_process';
+const EventEmitter = require('events');
+const { ChildProcess } = require('child_process');
 
 class Shimiteer {
   static async launch() {
@@ -592,3 +592,5 @@ type ConsoleMessageType =
   | 'profileEnd'
   | 'count'
   | 'timeEnd';
+
+module.exports = Shimiteer;

@@ -5,6 +5,17 @@
 
 > Puppeteer API shim for other browsers using WebdriverIO
 
+Want to use Puppeteer, but you need to work with other browsers? Maybe you're
+writing integration tests and you need to make sure stuff works in IE11 or you
+just want to make sure things look right in Firefox?
+
+Since the Puppeteer API is built on an open protocol, hopefully someday you
+will be able to use it with all of the browsers. But for now Shimiteer can help
+you out.
+
+Shimiteer implements the same API at Puppeteer (as least as closely as it can)
+so that you can use it today.
+
 ## Install
 
 ```sh

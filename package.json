@@ -38,6 +38,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
     "flow-bin": "^0.64.0",
     "glow": "^1.1.0",
     "husky": "^0.14.3",
@@ -51,5 +52,8 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "webdriverio": "^4.10.1"
+  },
+  "ava": {
+    "require": ["babel-register"]
   }
 }
